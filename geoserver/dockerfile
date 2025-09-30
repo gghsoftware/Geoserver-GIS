@@ -1,0 +1,22 @@
+# geo-stack/geoserver/Dockerfile
+FROM kartoza/geoserver:2.23.2
+
+# Basic env
+ENV GEOSERVER_INSTALL_EXTENSIONS=true \
+    GEOSERVER_CORS_ENABLED=true \
+    CORS_ALLOWED_ORIGINS=* \
+    INITIAL_MEMORY=1G \
+    MAXIMUM_MEMORY=2G
+
+# Copy your data_dir (workspaces, layers, cached tiles, etc.)
+COPY data_dir /opt/geoserver/data_dir
+
+# Copy plugin ZIPs here (MySQL extension, etc.)
+COPY extensions /opt/geoserver/exts
+
+# Copy JDBC driver into GeoServer WEB-INF/lib
+COPY extensions-lib/mysql-connector-java-8.0.28-custom.jar \
+     /opt/geoserver/webapps/geoserver/WEB-INF/lib/mysql-connector-java-8.0.28.jar
+
+# GeoServer listens on 8080 internally
+EXPOSE 8080

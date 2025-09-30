@@ -20,7 +20,7 @@ Replace `your_db` with the actual schema name.
 - Publish layer: `./scripts/publish.sh` (edit variables inside as needed).
 
 Test WMS:
-`http://geoserver-gis-production.up.railway.app/geoserver/gis/wms?service=WMS&request=GetMap&version=1.1.1&layers=gis:ibaan&bbox=120,13,122,15&srs=EPSG:4326&width=800&height=600&format=image/png`
+`http://geoserver-production-c975.up.railway.app/geoserver/gis/wms?service=WMS&request=GetMap&version=1.1.1&layers=gis:ibaan&bbox=120,13,122,15&srs=EPSG:4326&width=800&height=600&format=image/png`
 
 ## 3) (Optional) API proxy
 - `npm i express-http-proxy`

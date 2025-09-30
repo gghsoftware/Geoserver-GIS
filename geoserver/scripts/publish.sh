@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-GS=http://geoserver-gis-production.up.railway.app/geoserver
+GS=http://geoserver-production-c975.up.railway.app/geoserver
 AUTH=admin:geoserver
 WS=gis
 STORE=ibaan_mysql
